@@ -17,8 +17,9 @@ class ChartWidget extends StatelessWidget {
               child: CircularProgressIndicator(
                 value: .75,
                 strokeWidth: 10,
-                valueColor:
-                    AlwaysStoppedAnimation<Color?>(AppColors.chartPrimary),
+                valueColor: AlwaysStoppedAnimation<Color?>(
+                  AppColors.chartPrimary,
+                ),
                 backgroundColor: AppColors.chartSecondary,
               ),
             ),

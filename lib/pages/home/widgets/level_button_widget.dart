@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget levelButtonWidget(
-    {Color? backgroundColor,
-    required String title,
-    Color? outlinedColor,
-    Color? textColor}) {
+Widget levelButtonWidget({
+  Color? backgroundColor,
+  required String title,
+  Color? outlinedColor,
+  Color? textColor,
+}) {
   return Chip(
     shape: StadiumBorder(
       side: BorderSide(color: outlinedColor ?? Colors.black54, width: 0.4),

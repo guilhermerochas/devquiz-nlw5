@@ -1,5 +1,6 @@
 import 'package:devquiz/pages/home/widgets/app_bar_widget.dart';
 import 'package:devquiz/pages/home/widgets/level_button_widget.dart';
+import 'package:devquiz/pages/home/widgets/quiz_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:devquiz/core/core.dart';
 
@@ -15,39 +16,60 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarWidget(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        child: Row(
-          children: <Widget>[
-            levelButtonWidget(
-              title: "Facil",
-              backgroundColor: AppColors.levelButtonFacil,
-              textColor: AppColors.levelButtonTextFacil,
-              outlinedColor: AppColors.levelButtonBorderFacil,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 16, right: 16, top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                levelButtonWidget(
+                  title: "Facil",
+                  backgroundColor: AppColors.levelButtonFacil,
+                  textColor: AppColors.levelButtonTextFacil,
+                  outlinedColor: AppColors.levelButtonBorderFacil,
+                ),
+                levelButtonWidget(
+                  title: "Médio",
+                  backgroundColor: AppColors.levelButtonMedio,
+                  textColor: AppColors.levelButtonTextMedio,
+                  outlinedColor: AppColors.levelButtonBorderMedio,
+                ),
+                levelButtonWidget(
+                  title: "Difícil",
+                  backgroundColor: AppColors.levelButtonDificil,
+                  textColor: AppColors.levelButtonTextDificil,
+                  outlinedColor: AppColors.levelButtonBorderDificil,
+                ),
+                levelButtonWidget(
+                  title: "Perito",
+                  backgroundColor: AppColors.levelButtonPerito,
+                  textColor: AppColors.levelButtonTextPerito,
+                  outlinedColor: AppColors.levelButtonBorderPerito,
+                ),
+              ],
             ),
-            SizedBox(width: 10),
-            levelButtonWidget(
-              title: "Médio",
-              backgroundColor: AppColors.levelButtonMedio,
-              textColor: AppColors.levelButtonTextMedio,
-              outlinedColor: AppColors.levelButtonBorderMedio,
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Expanded(
+            child: GridView.count(
+              padding: EdgeInsets.symmetric(horizontal: 8),
+              crossAxisCount: 2,
+              crossAxisSpacing: 16,
+              mainAxisSpacing: 16,
+              children: <Widget>[
+                quizCardWidget(),
+                quizCardWidget(),
+                quizCardWidget(),
+                quizCardWidget()
+              ],
             ),
-            SizedBox(width: 10),
-            levelButtonWidget(
-              title: "Difícil",
-              backgroundColor: AppColors.levelButtonDificil,
-              textColor: AppColors.levelButtonTextDificil,
-              outlinedColor: AppColors.levelButtonBorderDificil,
-            ),
-            SizedBox(width: 10),
-            levelButtonWidget(
-              title: "Perito",
-              backgroundColor: AppColors.levelButtonPerito,
-              textColor: AppColors.levelButtonTextPerito,
-              outlinedColor: AppColors.levelButtonBorderPerito,
-            ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
