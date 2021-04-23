@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 Widget quizWidget({required String title}) => Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             title,
@@ -19,6 +20,8 @@ Widget quizWidget({required String title}) => Container(
           AnswerWidget(
             title:
                 "Possibilita a criação de aplicativos compilados nativamente.",
+            isSelected: true,
+            isRight: true,
           ),
           AnswerWidget(
             title:

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class ScoreCardWidget extends StatelessWidget {
   ScoreCardWidget({
+    required double score,
     Key? key,
   }) : super(key: key);
 
